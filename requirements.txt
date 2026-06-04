@@ -1,0 +1,21 @@
+# ZeravaneAI v2 — Streamlit Cloud requirements
+# Place this file at the ROOT of your GitHub repository
+
+streamlit>=1.28.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+urllib3>=1.26.0
+beautifulsoup4>=4.12.0
+
+# Google GenAI — needs protobuf >=4.x, do NOT pin to 3.20
+google-genai>=1.0.0
+protobuf>=4.25.0
+
+# ChromaDB + SQLite fix for Streamlit Cloud
+chromadb>=0.4.24
+pysqlite3-binary
+
+# API layer
+fastapi>=0.104.0
+uvicorn>=0.24.0
+python-multipart>=0.0.6
