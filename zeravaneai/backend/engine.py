@@ -5,9 +5,11 @@ from bs4 import BeautifulSoup
 import chromadb
 from google import genai
 from google.genai import types
-from dotenv import load_dotenv
-
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # Streamlit Cloud uses st.secrets — dotenv not needed
 
 
 class ZeravaneEngine:
