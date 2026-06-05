@@ -13,9 +13,11 @@ from typing import Optional
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from dotenv import load_dotenv
-
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # Streamlit Cloud uses st.secrets — dotenv not needed
 
 # Support both GEMINI_API_KEY and GOOGLE_API_KEY in .env
 if not os.environ.get("GEMINI_API_KEY") and os.environ.get("GOOGLE_API_KEY"):
