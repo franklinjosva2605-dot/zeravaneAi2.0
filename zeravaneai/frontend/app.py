@@ -9,8 +9,11 @@ try:
 except ImportError:
     pass
 
-from dotenv import load_dotenv
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # Streamlit Cloud uses st.secrets — dotenv not needed
 
 import re
 import streamlit as st
